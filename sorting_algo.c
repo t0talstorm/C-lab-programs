@@ -16,7 +16,7 @@ void main(){
     int arr[20] = {1 , 3 , 5 , 8 , 25 , 7 , 5 , 56 , 2 , 45 , 6 ,7  , 5 ,5  ,6  , 100 , 102 , 81 , 9 ,20};
 
     int size = sizeof(arr)/sizeof(arr[0]);
-    int key = 102;
+    int key = 81;
 
     printf("using linear search : ");
     int index = linearsearch( arr ,  size , key);
@@ -35,7 +35,9 @@ void main(){
     for (int i = 0 ; i < size ; i++){
         printf("%d ", arr[i]);
     }
-    printf("\n");
+
+    printf("\n\n");
+
     printf("using binary search : ");
     int indexbinary = binarysearch(arr , size , key);
      if (indexbinary != -1){
