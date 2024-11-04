@@ -2,14 +2,10 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+
 int binarysearch(int arr[] , int size , int key);
 int linearsearch(int arr[] , int size , int key);
-
-int compar(const void* a, const void* b)
-{
-    return (*(int*)a - *(int*)b);
-}
-
+void bubbleSorter(int arr[] , int size);
 
 void main(){
 
@@ -18,7 +14,7 @@ void main(){
     int size = sizeof(arr)/sizeof(arr[0]);
     int key = 81;
 
-    printf("using linear search : ");
+    printf("\nusing linear search : ");
     int index = linearsearch( arr ,  size , key);
     
     if (index != -1){
@@ -28,8 +24,7 @@ void main(){
         printf("\nThe key was not found in the search");
     }
 
-
-    qsort(arr, size, sizeof(int), compar);
+    bubbleSorter(arr , size);
 
     printf("\n\nsorted array : ");
     for (int i = 0 ; i < size ; i++){
@@ -80,4 +75,21 @@ int binarysearch(int arr[], int size, int key) {
     }
     
     return -1; 
+}
+
+void bubbleSorter(int arr[], int n) {
+
+    for (int i = 0; i < n - 1; i++) {
+
+        for (int j = 0; j < n - i - 1; j++) {
+
+            if (arr[j] > arr[j + 1]) {
+
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+           
+            }
+        }
+    }
 }
